@@ -29,9 +29,10 @@ int main()
 	char *p, s[100];
 	while (fgets(s, sizeof(s), stdin)) {
         number = strtoll(s, &p, 10);
-        if (p == s || *p != '\n'|| number < 0 || number > 2147483647) {
+		// Limit to 261984, as that was stack limit on test machine
+        if (p == s || *p != '\n'|| number < 0 || number > 261984) {
 			printf("Invalid entry.\n");
-            printf("Please enter a nonnegative integer (0 - 2147483647): ");
+            printf("Please enter a nonnegative integer (0 - 261984): ");
         } else break;
     }
 
