@@ -1,3 +1,6 @@
+# Ignore template folders
+_template/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
