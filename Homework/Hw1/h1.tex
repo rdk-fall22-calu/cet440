@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\date{}
+\author{Robert Krency}
+\title{Homework 1}
+
+% Geometry 
+\usepackage{geometry}
+\geometry{letterpaper, left=20mm, top=20mm, right=20mm, bottom=20mm}
+
+% Fancy Header
+\usepackage{fancyhdr}
+\fancyhf{}
+\lhead{CET 440}
+\rhead{Krency}
+\cfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+% Add vertical spacing to tables
+\renewcommand{\arraystretch}{1.4}
+
+% Document
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Question 1}
+
+\begin{equation}
+    \frac{3000km * 1440b}{2 * 10^8} = .216s = 216ms
+\end{equation}
+
+$\frac{distance}{speed}$, no, no
+
+\section*{Question 2}
+
+\begin{enumerate}[label=\Alph*.)]
+    \item $600 kbps$
+    \item $12s$
+    \item $300 kbps, 24s$
+\end{enumerate}
+
+\section*{Question 3}
+
+\begin{tabular}{l | c | c}
+     & 10 Cars & 8 Cars      \\ \hline
+    Tool Booth 1 & 80s & 64s \\
+    Highway 1 & 40m & 40m    \\
+    Tool Booth 2 & 80s & 64s \\
+    Highway 2 & 40m & 40m    \\
+    Tool Booth 2 & 80s & 64s \\ \hline
+    Total & 84min & 83min 12s 
+\end{tabular}
+
+
+\end{document}
