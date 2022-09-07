@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lastpage}
+
+\date{}
+\author{Robert Krency}
+\title{Lab 2}
+
+% Geometry 
+\usepackage{geometry}
+\geometry{letterpaper, left=20mm, top=20mm, right=20mm, bottom=20mm}
+
+% Fancy Header
+\usepackage{fancyhdr}
+\fancyhf{}
+\lhead{CET 440}
+\rhead{Krency}
+\cfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+% Add vertical spacing to tables
+\renewcommand{\arraystretch}{1.4}
+
+% Document
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+To compile, use: \textbf{gcc time.c -o lab2}
+
+To run, use: \textbf{.\textbackslash lab2}
+
+\begin{center}
+    \includegraphics{screenshot.png}    
+\end{center}
+
+\end{document}
