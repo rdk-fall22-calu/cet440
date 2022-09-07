@@ -1,6 +1,9 @@
 # Ignore template folders
 _template/
 
+#ignore executables
+*.exe
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
