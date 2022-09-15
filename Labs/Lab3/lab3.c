@@ -35,6 +35,8 @@ int main() {
     // Print the cipher key
     printCipher(cipher);
 
+    printf("\n");
+
     // Exit
     return 0;
 }

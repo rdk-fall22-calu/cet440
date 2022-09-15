@@ -4,6 +4,9 @@ _template/
 #ignore executables
 *.exe
 
+#ignore compiled c files
+*.o
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
