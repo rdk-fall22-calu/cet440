@@ -1,20 +1,21 @@
 /**
  * @file cipher.c
- * @author Distint Howie (email@pennwest.edu)
+ * @author Distint Howie (how4685@pennwest.edu)
  * @author Robert Krency (kre1188@pennwest.edu)
- * @author Anthony Stepich (email@pennwest.edu)
+ * @author Anthony Stepich (ste4864@pennwest.edu)
  * @brief Lab 3 for CET 440
- * @date 2022-09-12
  *
  */
 
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 #include "cipher.h"
 
 #define ASCII_CHARS 95
 #define ASCII_OFFSET 32
 
+// Initialize the Cipher
 int * getCipher(){
 
     time_t t;
@@ -38,11 +39,23 @@ int * getCipher(){
     return cipher;
 }
 
+// Print the cipher
 void printCipher(int cipher[])
 {
-    // Print the cipher
     for (int i = 0; i < ASCII_CHARS; i++)
     {
-        printf("[%c,%c]", i+ASCII_OFFSET, cipher[i]+ASCII_OFFSET);
+        printf("[%c,%c] ", i+ASCII_OFFSET, cipher[i]+ASCII_OFFSET);
+        if (i % 8 == 7)
+            printf("\n");
     }
 }
+
+// Substitute the cipher characters into the input string
+void encipher(char input[], int cipher[])
+{
+    for (int i = 0; i < strlen(input); i++)
+    {
+        input[i] = cipher[input[i] - ASCII_OFFSET] + ASCII_OFFSET;
+    }
+}
+
