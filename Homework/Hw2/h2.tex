@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\date{}
+\author{Robert Krency}
+\title{Homework 2}
+
+% Geometry 
+\usepackage{geometry}
+\geometry{letterpaper, left=20mm, top=20mm, right=20mm, bottom=20mm}
+
+% Fancy Header
+\usepackage{fancyhdr}
+
+\pagestyle{fancyplain}
+
+\fancyhf{}
+\lhead{CET 440}
+\rhead{Krency}
+\cfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+% Add vertical spacing to tables
+\renewcommand{\arraystretch}{1.4}
+
+% Document
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Question 1}
+
+$:($
+
+\section*{Question 2}
+
+\subsection*{Successful, Response 200}
+\includegraphics{q2good.png}
+
+\subsection*{Failed, Response 404}
+\includegraphics{q2bad.png}
+
+
+\section*{Question 3}
+
+\begin{enumerate}[label=\Alph*.]
+    \item (2,1) Host: students.calu.edu/chen/csc201/index.htm
+    \item (1) GET /chen/csc201/index.htm HTTP/1.1
+    \item Persistent, (3) Connection: keep-alive
+    \item No
+\end{enumerate}
+
+
+\end{document}
