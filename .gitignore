@@ -1,5 +1,7 @@
 # Ignore template folders
 _template/
+examples/
+build/
 
 #ignore executables
 *.exe
