@@ -21,18 +21,18 @@
  * @param level The level to log the message at
  * @param message The message to log
  */
-void logMessage(int level, char *message);
+void log_message(int level, char *message);
 
 /**
  * @brief Opens the log file to write to
  * 
  * @return int Success (1) / Failure (0)
  */
-int initializeLogger();
+int log_init();
 
 /**
  * @brief Closes the log file
  * 
  * @return int Success (1) / Failure (0)
  */
-int closeLogger();
+int log_close();
