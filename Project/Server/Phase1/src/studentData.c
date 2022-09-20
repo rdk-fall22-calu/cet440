@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 #include "students.h"
 #include "student.h"
@@ -125,9 +127,26 @@ struct students student_data_init()
     // Loop for data in file
     char line[FILE_BUFFER_SIZE];
     char *token;
+    srand(time(0));
+    
     while (fgets(line, FILE_BUFFER_SIZE, namesFile) != NULL)
     {
-        token = strtok(line, " ");
+        token = strtok(line,DELIMITER );
+        studentData.students[currentStudent]->userID = token;
+        
+        token = strtok(NULL, DELIMITER);
+        studentData.students[currentStudent]->name = token;
+        
+        studentData.students[currentStudent]->age = (rand() % (22-18 +1)) +18
+        
+        studentData.students[currentStudent]->gpa = (rand() % (40-25 +1))+25 /10;
+           
+        studentData.students[currentStudent]->status = 0
+       
+        studentData.students[currentStudent]->lastLoginTime = 0 
+        
+        studentData.students[currentStudent]->totalActiveTime = 0
+        
         
     }
 
