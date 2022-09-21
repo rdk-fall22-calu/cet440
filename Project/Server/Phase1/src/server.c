@@ -18,6 +18,10 @@
 #include "student.h"
 #include "studentData.h"
 
+#define size 4096 //block memory size
+#define shmkey 0x7700 + 01 //key for shmget()
+#define IPC_RESULT_ERROR (-1) //error returning -1 if sharded id could not be created
+
 int main() {
 
     // Initialize the Logger
@@ -31,7 +35,15 @@ int main() {
     }
 
     // Create the Shared Memory space for student data
-
+    int shared_memory_id;
+    shared_memory_id = shmget(shmkey, size, IPC_CREAT | 0666);
+    if(shared_memory_id == IPC_RESULT_ERROR){
+        printf("Error: shmget() failed, errno = %i\n", errno);
+        perror("shmget()");
+    }
+    else
+        printf("shmget() successful, shared_memory_id = %i\n", shared_memory_id);
+    
     // Loop to poll activity and update data
 
     // Cleanup
