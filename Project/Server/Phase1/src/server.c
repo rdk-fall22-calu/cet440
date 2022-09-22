@@ -12,7 +12,7 @@
 #include <sys/types.h>		// for system defined types
 //#include <sys/ipc.h>		// for IPC permission structure
 //#include <sys/shm.h>		// for shared memory facility defines
-
+#include <string.h>
 
 #include "students.h"
 #include "student.h"
@@ -21,7 +21,7 @@
 #define size 4096 //block memory size
 #define shmkey 0x7700 + 01 //key for shmget()
 #define IPC_RESULT_ERROR (-1) //error returning -1 if sharded id could not be created
-
+#define DELIMITER " "
 int main() {
 
     // Initialize the Logger
@@ -46,6 +46,34 @@ int main() {
     
     // Loop to poll activity and update data
 
+    
+    
+        char active_users[27][20];
+        char* token;
+        token = strtok(result, DELIMITER);
+        int counter=0;
+    
+    FILE *fpipe;
+    char *command = "who";
+    char result[1024]={0x0};
+
+    if (0 == (fpipe = (FILE*)popen(command, "r")))
+    {
+        perror("popen() failed.");
+        exit(EXIT_FAILURE);
+    }
+
+    while (fgets(result, sizeof(result), fpipe) !=NULL)
+       {
+           strcpy(token, active_users[counter]);
+            counter++
+        }
+
+                  
+    pclose(fpipe);
+    
+
+   
     // Cleanup
     student_file_save(studentData);
 
